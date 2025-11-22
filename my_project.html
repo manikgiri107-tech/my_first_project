@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Advanced Website</title>
+
+    <style>
+        /* Colors */
+        :root {
+            --bg: #ffccdd;          /* light pink */
+            --text: #00008b;        /* deep blue */
+            --menu: #ffb6c1;
+            --card-bg: white;
+        }
+
+        body.dark {
+            --bg: #1a1a1a;
+            --text: #add8e6;
+            --menu: #333;
+            --card-bg: #222;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            transition: 0.3s ease;
+        }
+
+        /* Navigation Menu */
+        nav {
+            background-color: var(--menu);
+            padding: 15px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav a {
+            color: var(--text);
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 20px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+            font-size: 21px;
+        }
+
+        /* Buttons */
+        .btn {
+            padding: 10px 20px;
+            background: var(--text);
+            color: var(--bg);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            opacity: 0.8;
+        }
+
+        /* Sections */
+        section {
+            padding: 40px;
+            text-align: center;
+            animation: fade 1s ease-in;
+        }
+
+        @keyframes fade {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Cards */
+        .card-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background: var(--card-bg);
+            color: var(--text);
+            width: 280px;
+            padding: 20px;
+            margin: 10px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        /* Contact Form */
+        input, textarea {
+            width: 80%;
+            padding: 10px;
+            margin: 10px;
+            border: 2px solid var(--text);
+            border-radius: 5px;
+            background: var(--card-bg);
+            color: var(--text);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--menu);
+            padding: 20px;
+            text-align: center;
+            color: var(--text);
+            font-weight: bold;
+            margin-top: 40px;
+        }
+    </style>
+
+    <script>
+        function toggleTheme() {
+            document.body.classList.toggle("dark");
+        }
+    </script>
+
+</head>
+<body>
+
+    <!-- Menu -->
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+        <button class="btn" onclick="toggleTheme()">Dark / Light Mode</button>
+    </nav>
+
+    <!-- Home -->
+    <section id="home">
+        <h1>Welcome to My Full Feature Website</h1>
+        <p>Your website includes menu, cards, animations, buttons, and more!</p>
+        <button class="btn">Learn More</button>
+    </section>
+
+    <!-- About -->
+    <section id="about">
+        <h1>About Us</h1>
+        <div class="card-container">
+            <div class="card">
+                <h3>Our Mission</h3>
+                <p>Creating beautiful and simple web designs.</p>
+            </div>
+            <div class="card">
+                <h3>Our Vision</h3>
+                <p>To make the web easy and fun for everyone.</p>
+            </div>
+            <div class="card">
+                <h3>Our Team</h3>
+                <p>We are creative designers and developers.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services">
+        <h1>Services</h1>
+        <div class="card-container">
+            <div class="card">
+                <h3>Web Design</h3>
+                <p>Modern designs with animations and color themes.</p>
+            </div>
+            <div class="card">
+                <h3>Development</h3>
+                <p>Fast and responsive websites for all devices.</p>
+            </div>
+            <div class="card">
+                <h3>SEO</h3>
+                <p>Improve your ranking on search engines.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+        <h1>Contact Us</h1>
+        <form>
+            <input type="text" placeholder="Your Name" required><br>
+            <input type="email" placeholder="Your Email" required><br>
+            <textarea rows="5" placeholder="Your Message"></textarea><br>
+            <button class="btn">Send</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        © 2025 | Your Website | All Rights Reserved
+    </footer>
+
+</body>
+</html>
